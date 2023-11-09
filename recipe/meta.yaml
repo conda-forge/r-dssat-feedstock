@@ -1,4 +1,4 @@
-{% set version = '0.0.7' %}
+{% set version = "0.0.8" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/DSSAT_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/DSSAT/DSSAT_{{ version }}.tar.gz
-  sha256: d06181d2458854067511d1d5d0f6ceb6e66ff2c46555eddf1c047bf7d32e5da0
+  sha256: cae62c43841b8bb396241ee51cf70aff9f73befa48eb28c7895d4cbbf2994413
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -61,10 +61,8 @@ test:
 about:
   home: https://CRAN.R-project.org/package=DSSAT
   license: GPL-3.0-or-later
-  summary: The purpose of this package is to provide a comprehensive R interface to the Decision
-    Support System for Agrotechnology Transfer Cropping Systems Model (DSSAT-CSM; see
-    <https://dssat.net> for more information). The package provides cross-platform functions
-    to read and write input files, run DSSAT-CSM, and read output files.
+  summary: The purpose of this package is to provide a comprehensive R interface to the Decision Support System for Agrotechnology Transfer Cropping Systems Model (DSSAT-CSM; see <https://dssat.net> for more information). The package provides cross-platform functions to read and write input files, run DSSAT-CSM, and read
+    output files.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
